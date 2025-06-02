@@ -106,12 +106,10 @@ function removeTransaction(transactionId) {
 
     const transacao = transacoesSalvas[index];
 
-    // Atualizar os valores
     atualizaSaldoRemovido(transacao);
     transacoesSalvas.splice(index, 1);
     localStorage.setItem(chave_transacoes_storage, JSON.stringify(transacoesSalvas));
 
-    // Remover do DOM
     const li = trasacoesUl.querySelector(`li[data-id="${transactionId}"]`);
     if (li) trasacoesUl.removeChild(li);
 }
